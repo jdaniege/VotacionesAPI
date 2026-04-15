@@ -1,0 +1,12 @@
+services:
+  api:
+    build: .
+    ports:
+      - "5000:8080"
+
+  frontend:
+    build: ./votaciones-fronted
+    ports:
+      - "3001:80"
+    depends_on:
+      - api
